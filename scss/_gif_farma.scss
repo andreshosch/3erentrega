@@ -1,0 +1,33 @@
+                 /* comienzo posicionamiento del gif en index.htl*/
+                 
+                 .gif_farma {
+                     position: fixed;
+                     bottom: 0;
+                     right: 0;
+                     font-size: 30px;
+                 }
+                 /* comienzo mediaquery para el tamaño del gif del index*/
+                 
+                 @media screen and (max-width: 540px) {
+                     .popup {
+                         & img {
+                             width: 100px;
+                         }
+                     }
+                 }
+                 
+                 @media screen and (max-width: 360px) {
+                     .icono_header {
+                         & img {
+                             width: 80px;
+                         }
+                     }
+                 }
+                 
+                 @media screen and (max-width: 280px) {
+                     .icono_header {
+                         & img {
+                             width: 60px;
+                         }
+                     }
+                 }

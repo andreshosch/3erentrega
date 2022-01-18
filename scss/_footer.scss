@@ -1,0 +1,122 @@
+                                      /*comienzo mixim para el color y tipo de fuente del footer y seccion redes sociales*/
+                                      
+                                      @mixin footer_redes ($bgcolor) {
+                                          background-color: $bgcolor;
+                                          color: black;
+                                      }
+                                      
+                                      .color_footer {
+                                          @include footer_redes($bg_aguamarina);
+                                      }
+                                      
+                                      .color_redes {
+                                          @include footer_redes($bg_blanco);
+                                      }
+                                      /*comienzo iconos redes sociales*/
+                                      
+                                      .iconos_redes {
+                                          & div {
+                                              margin-left: 1.5rem;
+                                              justify-content: left;
+                                              & :hover {
+                                                  transform: scale(1.1);
+                                              }
+                                          }
+                                          & h6 {
+                                              display: inline;
+                                              font-size: 15px;
+                                          }
+                                      }
+                                      /*comienzo contacto en footer*/
+                                      
+                                      .contacto {
+                                          font-size: 10px;
+                                          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                                          color: saddlebrown;
+                                          & h6 {
+                                              text-align: center;
+                                          }
+                                          & img:hover {
+                                              transform: scale(1.2);
+                                          }
+                                      }
+                                      /*comienzo map para el color de los enlaces h6 en la seccion categorias*/
+                                      
+                                      $enlaces_footer:( enlace:saddlebrown);
+                                      $enlace:map-get($enlaces_footer, enlace);
+                                      /*comienzo categorias en footer*/
+                                      
+                                      .categorias {
+                                          font-size: 30px;
+                                          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                                          color: saddlebrown;
+                                          & h6 {
+                                              font-size: 12px;
+                                              margin-top: 20px;
+                                              color: $enlace;
+                                          }
+                                          & a {
+                                              text-decoration: none;
+                                              & :hover {
+                                                  background-color: sienna;
+                                                  color: white;
+                                              }
+                                          }
+                                      }
+                                      /*comienzo ubicacion en footer*/
+                                      
+                                      .ubicacion {
+                                          color: saddlebrown;
+                                          & h4 {
+                                              text-align: center;
+                                          }
+                                          & h6 {
+                                              text-align: center;
+                                          }
+                                          & a {
+                                              text-decoration: none;
+                                              color: saddlebrown;
+                                          }
+                                      }
+                                      /*comiendo copyright en footer*/
+                                      
+                                      .copyright {
+                                          text-align: center;
+                                          font-size: 15px;
+                                          margin-top: 2rem;
+                                          color: black;
+                                      }
+                                      /*comienzo mediaquery footer*/
+                                      
+                                      @media screen and (max-width: 540px) {
+                                          .contacto {
+                                              .linea_horizontal {
+                                                  display: unset;
+                                              }
+                                              & h6 {
+                                                  font-size: 10px;
+                                              }
+                                              & h4 {
+                                                  font-size: 14px;
+                                              }
+                                          }
+                                          .categorias {
+                                              & h6 {
+                                                  font-size: 10px;
+                                              }
+                                              & h4 {
+                                                  font-size: 14px;
+                                              }
+                                          }
+                                          .ubicacion {
+                                              & h6 {
+                                                  font-size: 10px;
+                                              }
+                                              & h4 {
+                                                  font-size: 14px;
+                                              }
+                                          }
+                                          .copyright {
+                                              font-size: 12px;
+                                          }
+                                      }

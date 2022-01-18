@@ -1,0 +1,45 @@
+/*comienzo boton de busqueda productos y envio newsletter */
+
+.botones {
+    color: black;
+    padding: 0.5em 1.2em;
+    border-radius: 10%;
+    width: 80px;
+    height: 40px;
+    margin-top: 1%;
+    border: 2px solid;
+    border-color: black;
+    position: relative;
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 0px;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.1);
+        transition: all 1s ease;
+    }
+    &:hover:before {
+        width: 100%;
+    }
+}
+
+.btn_buscar {
+    @extend .botones;
+    background: lightblue;
+}
+
+.btn_enviar {
+    @extend .botones;
+    background: burlywood;
+}
+
+
+/* comienzo barra busqueda del header*/
+
+.form-control {
+    height: 40px;
+    margin-top: 1%;
+    background-color: whitesmoke;
+}

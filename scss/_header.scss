@@ -1,0 +1,31 @@
+                           /* comienzo mediaquerys para el tamño del logo del header*/
+                           
+                           @media screen and (max-width: 540px) {
+                               .icono_header {
+                                   & img {
+                                       margin-left: 0;
+                                       height: 70px;
+                                       width: 70px;
+                                   }
+                               }
+                           }
+                           
+                           @media screen and (max-width: 280px) {
+                               .icono_header {
+                                   & img {
+                                       margin-left: 0;
+                                       height: 50px;
+                                       width: 50px;
+                                   }
+                               }
+                           }
+                           
+                           @media screen and (max-width: 360px) {
+                               .icono_header {
+                                   & img {
+                                       margin-left: 0;
+                                       height: 60px;
+                                       width: 60px;
+                                   }
+                               }
+                           }

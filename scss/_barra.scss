@@ -1,0 +1,10 @@
+ /* comienzo barra de secciones de los distintos html*/
+ 
+ .estilo_barra {
+     background-color: $bg_aguamarina;
+     text-transform: uppercase;
+     & a:hover {
+         background-color: $bg_azulado;
+     }
+     grid-area: barra;
+ }

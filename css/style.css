@@ -1,0 +1,593 @@
+@charset "UTF-8";
+/*comienzo boton de busqueda productos y envio newsletter */
+.botones, .btn_buscar, .btn_enviar {
+  color: black;
+  padding: 0.5em 1.2em;
+  border-radius: 10%;
+  width: 80px;
+  height: 40px;
+  margin-top: 1%;
+  border: 2px solid;
+  border-color: black;
+  position: relative; }
+  .botones:before, .btn_buscar:before, .btn_enviar:before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 1s ease; }
+  .botones:hover:before, .btn_buscar:hover:before, .btn_enviar:hover:before {
+    width: 100%; }
+
+.btn_buscar {
+  background: lightblue; }
+
+.btn_enviar {
+  background: burlywood; }
+
+/* comienzo barra busqueda del header*/
+.form-control {
+  height: 40px;
+  margin-top: 1%;
+  background-color: whitesmoke; }
+
+body {
+  max-width: 100%;
+  overflow-x: hidden; }
+
+/* comienzo fondo de body para farmatips.html y conocenos.html */
+.fondo_body {
+  background: #020024;
+  background: linear-gradient(90deg, #020024 0%, #097879 60%, #00d4ff 100%); }
+
+/* comienzo barra de secciones de los distintos html*/
+.estilo_barra {
+  background-color: #7fffd4;
+  text-transform: uppercase;
+  grid-area: barra; }
+  .estilo_barra a:hover {
+    background-color: #6495ed; }
+
+/*comienzo enlaces fotos index.html*/
+.estilos_enlaces {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 40px; }
+  .estilos_enlaces img:hover {
+    transform: scale(1.2); }
+
+/*comienzo mixim para el color y tipo de fuente del footer y seccion redes sociales*/
+.color_footer {
+  background-color: #7fffd4;
+  color: black; }
+
+.color_redes {
+  background-color: #faebd7;
+  color: black; }
+
+/*comienzo iconos redes sociales*/
+.iconos_redes div {
+  margin-left: 1.5rem;
+  justify-content: left; }
+  .iconos_redes div :hover {
+    transform: scale(1.1); }
+
+.iconos_redes h6 {
+  display: inline;
+  font-size: 15px; }
+
+/*comienzo contacto en footer*/
+.contacto {
+  font-size: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: saddlebrown; }
+  .contacto h6 {
+    text-align: center; }
+  .contacto img:hover {
+    transform: scale(1.2); }
+
+/*comienzo map para el color de los enlaces h6 en la seccion categorias*/
+/*comienzo categorias en footer*/
+.categorias {
+  font-size: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: saddlebrown; }
+  .categorias h6 {
+    font-size: 12px;
+    margin-top: 20px;
+    color: saddlebrown; }
+  .categorias a {
+    text-decoration: none; }
+    .categorias a :hover {
+      background-color: sienna;
+      color: white; }
+
+/*comienzo ubicacion en footer*/
+.ubicacion {
+  color: saddlebrown; }
+  .ubicacion h4 {
+    text-align: center; }
+  .ubicacion h6 {
+    text-align: center; }
+  .ubicacion a {
+    text-decoration: none;
+    color: saddlebrown; }
+
+/*comiendo copyright en footer*/
+.copyright {
+  text-align: center;
+  font-size: 15px;
+  margin-top: 2rem;
+  color: black; }
+
+/*comienzo mediaquery footer*/
+@media screen and (max-width: 540px) {
+  .contacto .linea_horizontal {
+    display: unset; }
+  .contacto h6 {
+    font-size: 10px; }
+  .contacto h4 {
+    font-size: 14px; }
+  .categorias h6 {
+    font-size: 10px; }
+  .categorias h4 {
+    font-size: 14px; }
+  .ubicacion h6 {
+    font-size: 10px; }
+  .ubicacion h4 {
+    font-size: 14px; }
+  .copyright {
+    font-size: 12px; } }
+
+/* comienzo imagenes tipo baner */
+.imagen {
+  height: auto;
+  width: 100%;
+  padding-top: 1rem; }
+
+/* comienzo reseteo de margenes*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+/*comienzo productos para la venta */
+.productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 1%;
+  border-color: green;
+  background-color: azure; }
+  .productos div {
+    margin-top: 2%; }
+    .productos div:hover {
+      opacity: 80%; }
+  .productos h4 {
+    color: red;
+    font-size: solid;
+    text-align: left; }
+  .productos .color_boton_producto {
+    background-color: lawngreen;
+    color: black; }
+
+/*comienzo ventana de logueo*/
+.ventana_logueo {
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  opacity: 0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none; }
+
+.ventana_logueo:target {
+  opacity: 1;
+  pointer-events: auto; }
+
+.ventana_logueo > div {
+  width: 360px;
+  position: relative;
+  margin: 10% auto;
+  padding: 5px 20px 13px 20px;
+  border-radius: 10px;
+  background: #fff;
+  background: -moz-linear-gradient(#fff, #999);
+  background: -webkit-linear-gradient(#fff, #999);
+  background: -o-linear-gradient(#fff, #999);
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in; }
+  .ventana_logueo > div .ventana_logueo_cerrar {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000; }
+  .ventana_logueo > div .ventana_logueo_cerrar:hover {
+    background: #00d9ff; }
+  .ventana_logueo > div .logueo input {
+    background-color: #d4f1f1; }
+  .ventana_logueo > div .logueo label {
+    color: cadetblue; }
+  .ventana_logueo > div .input_user input {
+    margin-left: 9%; }
+  .ventana_logueo > div .input_user label {
+    margin-left: 0%; }
+  .ventana_logueo > div h4 {
+    margin-top: 5%;
+    margin-bottom: 10%;
+    color: cadetblue;
+    font-size: 20px; }
+
+.boton_logueo {
+  padding-top: 10%; }
+  .boton_logueo input {
+    background-color: #606061;
+    border-radius: 1%;
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    color: white;
+    text-align: center; }
+  .boton_logueo :hover {
+    background-color: #00d9ff; }
+
+/*comienzo mediaquery ventana de logueo*/
+@media screen and (max-width: 540px) {
+  .ventana_logueo > div {
+    width: 300px; }
+  .input_user input {
+    margin-right: 8%; } }
+
+/* comienzo posicionamiento del gif en index.htl*/
+.gif_farma {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  font-size: 30px; }
+
+/* comienzo mediaquery para el tamaño del gif del index*/
+@media screen and (max-width: 540px) {
+  .popup img {
+    width: 100px; } }
+
+@media screen and (max-width: 360px) {
+  .icono_header img {
+    width: 80px; } }
+
+@media screen and (max-width: 280px) {
+  .icono_header img {
+    width: 60px; } }
+
+/*comienzo contenedor farmatips.html*/
+.contenedor_farmatips {
+  height: 1000px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  grid-template-areas: "header_farma header_farma" "barra_farma barra_farma" "tips1 tips2" "tips3 tips4" "tips5 tips6" "tips7 tips8" "footer_farma footer_farma";
+  margin: 10px auto;
+  /*comienzo extend para farmatips.html*/ }
+  .contenedor_farmatips .header_farma {
+    grid-area: header_farma;
+    background-color: white; }
+  .contenedor_farmatips .barra_farma {
+    grid-area: barra_farma; }
+  .contenedor_farmatips .tips_card, .contenedor_farmatips .tips1, .contenedor_farmatips .tips2, .contenedor_farmatips .tips3, .contenedor_farmatips .tips4, .contenedor_farmatips .tips5, .contenedor_farmatips .tips6, .contenedor_farmatips .tips7, .contenedor_farmatips .tips8 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    display: flex;
+    justify-content: space-around; }
+  .contenedor_farmatips .tips1 {
+    grid-area: tips1; }
+  .contenedor_farmatips .tips2 {
+    grid-area: tips2; }
+  .contenedor_farmatips .tips3 {
+    grid-area: tips3; }
+  .contenedor_farmatips .tips4 {
+    grid-area: tips4; }
+  .contenedor_farmatips .tips5 {
+    grid-area: tips5; }
+  .contenedor_farmatips .tips6 {
+    grid-area: tips6; }
+  .contenedor_farmatips .tips7 {
+    grid-area: tips7; }
+  .contenedor_farmatips .tips8 {
+    grid-area: tips8; }
+  .contenedor_farmatips .footer_farma {
+    grid-area: footer_farma; }
+
+/* comienzo tarjetas de farmatips*/
+.flip-card {
+  background-color: transparent;
+  width: 400px;
+  height: 400px;
+  border: 1px solid #f1f1f1;
+  perspective: 1500px; }
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d; }
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg); }
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; }
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black; }
+  .flip-card-front img {
+    width: 400px;
+    height: 400px; }
+
+.flip-card-back {
+  background-color: lightgreen;
+  color: blue;
+  transform: rotateY(180deg); }
+  .flip-card-back p {
+    color: red;
+    font-family: Arial, Helvetica, sans-serif; }
+  .flip-card-back ul {
+    color: red;
+    font-family: Arial, Helvetica, sans-serif; }
+
+/*comienzo mediaquery farmatips.html*/
+@media screen and (max-width: 768px) {
+  .contenedor_farmatips {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(11, 1fr);
+    grid-template-areas: "header_farma" "barra_farma" "tips1" "tips2" "tips3" "tips4" "tips5" "tips6" "tips7" "tips8" "footer_farma"; } }
+
+@media screen and (max-width: 375px) {
+  .flip-card {
+    width: 300px;
+    height: 300px; }
+  .flip-card-front img {
+    width: 300px;
+    height: 300px; }
+  .flip-card-back p {
+    font-size: 12px; }
+  .flip-card-back ul {
+    font-size: 12px; } }
+
+@media screen and (max-width: 280px) {
+  .flip-card {
+    width: 250px;
+    height: 250px; }
+  .flip-card-front img {
+    width: 250px;
+    height: 250px; }
+  .flip-card-back p {
+    font-size: 9px; }
+  .flip-card-back ul {
+    font-size: 9px; } }
+
+/* comienzo mediaquerys para el tamño del logo del header*/
+@media screen and (max-width: 540px) {
+  .icono_header img {
+    margin-left: 0;
+    height: 70px;
+    width: 70px; } }
+
+@media screen and (max-width: 280px) {
+  .icono_header img {
+    margin-left: 0;
+    height: 50px;
+    width: 50px; } }
+
+@media screen and (max-width: 360px) {
+  .icono_header img {
+    margin-left: 0;
+    height: 60px;
+    width: 60px; } }
+
+/* comienzo grid-area conocenos.html */
+.header {
+  grid-area: header;
+  background-color: white; }
+
+.barra {
+  grid-area: barra; }
+
+.info1 {
+  grid-area: info1;
+  padding-top: 50px; }
+  .info1 div {
+    margin-top: 5%;
+    margin-right: 10%; }
+  .info1 p {
+    color: wheat;
+    font-size: 30px;
+    font-family: 'Waterfall'; }
+
+.info2 {
+  grid-area: info2;
+  padding-top: 50px; }
+  .info2 div {
+    margin-top: 5%;
+    margin-left: 10%; }
+  .info2 p {
+    color: wheat;
+    font-size: 30px;
+    font-family: 'Waterfall'; }
+
+.info3 {
+  grid-area: info3;
+  padding-top: 50px; }
+  .info3 div {
+    margin-top: 5%;
+    margin-right: 10%; }
+  .info3 p {
+    color: wheat;
+    font-size: 30px;
+    font-family: 'Waterfall'; }
+
+.info4 {
+  grid-area: info4;
+  padding-top: 50px; }
+  .info4 div {
+    margin-top: 5%;
+    margin-left: 10%; }
+  .info4 p {
+    color: wheat;
+    font-size: 30px;
+    font-family: 'Waterfall'; }
+
+.footer {
+  grid-area: footer; }
+
+/* comienzo extend de las fotos en conocenos.html*/
+.fotos_grid, .foto1, .foto2, .foto3, .foto4 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center; }
+  .fotos_grid img, .foto1 img, .foto2 img, .foto3 img, .foto4 img {
+    width: 600px;
+    height: 400px; }
+
+.foto1 {
+  grid-area: foto1; }
+
+.foto2 {
+  grid-area: foto2; }
+
+.foto3 {
+  grid-area: foto3; }
+
+.foto4 {
+  grid-area: foto4; }
+
+/*comienzo contenedor grid conocenos.html*/
+.contenedor_conocenos {
+  height: 1000px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  grid-template-areas: "header header" "barra barra" "foto1 info1" "info2 foto2" "foto3 info3" "info4 foto4" "footer footer";
+  margin: 10px auto; }
+
+/* comienzo mediaquerys conocenos.html*/
+@media screen and (max-width: 768px) {
+  .contenedor_conocenos {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(11, 1fr);
+    grid-template-areas: "header" "barra" "foto1" "info1" "foto2" "info2" "foto3" "info3" "foto4" "info4" "footer"; }
+  .fotos_grid img, .foto1 img, .foto2 img, .foto3 img, .foto4 img {
+    width: 500px;
+    height: 300px; }
+  .info1 {
+    text-align: center;
+    padding-top: 0; }
+    .info1 div {
+      margin-top: 0;
+      margin-right: 0; }
+    .info1 p {
+      font-size: 20px; }
+  .info2 {
+    text-align: center;
+    padding-top: 0; }
+    .info2 div {
+      margin-top: 0;
+      margin-left: 0; }
+    .info2 p {
+      font-size: 20px; }
+  .info3 {
+    text-align: center;
+    padding-top: 0; }
+    .info3 div {
+      margin-top: 0;
+      margin-right: 0; }
+    .info3 p {
+      font-size: 20px; }
+  .info4 {
+    text-align: center;
+    padding-top: 0; }
+    .info4 div {
+      margin-top: 0;
+      margin-left: 0; }
+    .info4 p {
+      font-size: 20px; } }
+
+@media screen and (max-width: 475px) {
+  .contenedor_conocenos {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(11, 1fr);
+    grid-template-areas: "header" "barra" "foto1" "info1" "foto2" "info2" "foto3" "info3" "foto4" "info4" "footer"; }
+  .fotos_grid img, .foto1 img, .foto2 img, .foto3 img, .foto4 img {
+    width: 300px;
+    height: 200px; }
+  .info1 {
+    text-align: center;
+    padding-top: 0; }
+    .info1 div {
+      margin-top: 0;
+      margin-right: 0; }
+    .info1 p {
+      font-size: 10px; }
+  .info2 {
+    text-align: center;
+    padding-top: 0; }
+    .info2 div {
+      margin-top: 0;
+      margin-left: 0; }
+    .info2 p {
+      font-size: 10px; }
+  .info3 {
+    text-align: center;
+    padding-top: 0; }
+    .info3 div {
+      margin-top: 0;
+      margin-right: 0; }
+    .info3 p {
+      font-size: 10px; }
+  .info4 {
+    text-align: center;
+    padding-top: 0; }
+    .info4 div {
+      margin-top: 0;
+      margin-left: 0; }
+    .info4 p {
+      font-size: 10px; } }
+
+@media screen and (max-width: 280px) {
+  .info1 p {
+    font-size: 8px; }
+  .info2 p {
+    font-size: 8px; }
+  .info3 p {
+    font-size: 8px; }
+  .info4 p {
+    font-size: 8px; } }
